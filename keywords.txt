@@ -1,0 +1,18 @@
+#######################################
+# Syntax Coloring Map QuxCV
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Qux_CV	KEYWORD1
+QuxCV KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+setup2CVs	KEYWORD2
+setup4CVs	KEYWORD2
+setup6CVs	KEYWORD2
+
