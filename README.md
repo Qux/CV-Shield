@@ -1,5 +1,5 @@
 # CV-Shield
-QuxのシンセサイザーのためのCV信号を、Arduinoの `analogWrite` 関数で生成できるようにした上で、オーディオジャックから出力できるようにするためのシールドです。
+QuxのシンセサイザーのためのCV信号を、Arduinoの `analogWrite` 関数で生成できるようにした上で、オーディオジャックから出力できるようにするためのシールド用のライブラリです。
 
 ## Installing
 ダウンロードもしくは`clone`した後、Arduinoの`myApps/libraries`フォルダに入れてください。
@@ -11,6 +11,11 @@ CV出力をするためには、少しのセットアップが必要です。セ
 - 4つ使う場合 : `setup4CVs()` -> D9,D10ピンがCV対応になります。
 - 6つ使う場合 : `setup6CVs()` -> D5,D6ピンがCV対応になります。（注意あり）
 
+'setup()'内でいづれかの関数を呼びだせば、あとは'loop()'内などお好きなところでいつものように`analogWrite()`してください。
+
 ### 注意
 CVを6つ使い場合は、`delay()`や`mills()`, `Metro`などの挙動が変化します。
 なお、その場合にも使えるオリジナルの代替関数を作成中です。
+
+## Examples
+ライブラリをインストール後、Arduino IDE内の`Files/Eaxmples/Qux CV Shield Library`から参照可能です。
