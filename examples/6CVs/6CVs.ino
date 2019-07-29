@@ -19,7 +19,7 @@ void loop() {
   analogWrite(9, counter >> 1); // half of counter
   analogWrite(10, 255  >> 2);  // quarter of counter
 
-  analogWrite(5, counter >> 3); // 1/8 of counter
+  analogWrite(5, counter); 
   analogWrite(6, random(255));  
 
   counter++;
@@ -32,5 +32,5 @@ void loop() {
     delay().
    */
 
-  QuxCV::delay(1000);
+  QuxCV::qdelay(1000);
 }

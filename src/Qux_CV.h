@@ -1,17 +1,13 @@
 #include <Arduino.h>
 
 namespace QuxCV {
-    static bool disturb_timer = false;
-
     inline void setupTimer0() {
         TCCR0B &= B11111000;
-        TCCR0B |= B00000010;
+        TCCR0B |= B00000001;
         
         DDRD |= _BV(5);
         DDRD |= _BV(6);
-
-        disturb_timer = true;
-}
+    }
 
     inline void settupTimer1()  {
         TCCR1B &= B11111000;
@@ -32,18 +28,33 @@ namespace QuxCV {
     void setup4CVs();
     void setup6CVs();
     void setupAnalogRead(bool highRes = false);
-    void delay(const unsigned long delayTime);
-    unsigned long millis();
+    void wait(const unsigned long delayTime);
+    unsigned long msec();
+    unsigned long usec();
 
     class Metro  {
         public:
         Metro();
         Metro(unsigned long _interval);
+        virtual inline void updateCurrentTime() {
+            now = QuxCV::msec();
+        };
         bool check();
         void reset();
 
-        private:
-        unsigned long  previous_millis, interval_millis;
+        protected:
+        unsigned long  previous_time, interval, now;
+    };
+
+    class MicroMetro: public Metro {
+        public:
+    
+        MicroMetro(const unsigned long _interval) { // Maximum: 256us
+            interval = _interval;
+        }
+        inline void updateCurrentTime() {
+            now = QuxCV::usec();
+        }
     };
 } // namespace QuxCV
 

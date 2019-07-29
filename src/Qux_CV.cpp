@@ -26,43 +26,48 @@ void QuxCV::setupAnalogRead(bool highRes) {
     } 
 }
 
-void QuxCV::delay(const unsigned long delayTime) {
-    delay(delayTime << 6);
-}
-
-
-unsigned long QuxCV::millis() {
+unsigned long QuxCV::msec() {
     return millis() >> 6;
 }
 
+unsigned long QuxCV::usec() {
+    return micros() >> 6;
+}
+
+void QuxCV::wait(const unsigned long delayTime) {
+    unsigned long end = QuxCV::msec() + delayTime;
+    while (QuxCV::msec() < end);
+}
+
+
 QuxCV::Metro::Metro() {
-    this->interval_millis = 1000;
+    interval = 1000;
 }
 
 QuxCV::Metro::Metro(unsigned long _interval) {
-    this->interval_millis = _interval;
+    interval = _interval;
 }
 
 bool QuxCV::Metro::check() {
-    unsigned long now = QuxCV::millis();
-  
-    if ( interval_millis == 0 ) {
-        this->previous_millis = now;
-        return 1;
+    updateCurrentTime();
+    
+    if ( interval == 0 ) {
+        previous_time = now;
+        return true;
     }
 
-    if ( (now - this->previous_millis) >= this->interval_millis) {
+    if ( (now - previous_time) >= interval) {
         #ifdef NOCATCH_UP
-        previous_millis = now ; 
+        previous_time = now ; 
         #else
-        this->previous_millis += this->interval_millis ; 
+        previous_time += interval ; 
         #endif
-        return 1;
+        return true;
     }
   
-    return 0;
+    return false;
 }
 
 void QuxCV::Metro::reset () {
-    this->previous_millis = millis();
+    previous_time = QuxCV::msec();
 }
