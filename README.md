@@ -12,21 +12,21 @@ CV出力をするためには、少しのセットアップが必要です。セ
 - 4つ使う場合 : `setup4CVs()` -> D9,D10ピンがCV対応になります。
 - 6つ使う場合 : `setup6CVs()` -> D5,D6ピンがCV対応になります。（注意あり）
 
-'setup()'内でいづれかの関数を呼びだせば、あとは'loop()'内などお好きなところでいつものように`analogWrite()`してください。
+`setup()`内でいづれかの関数を呼びだせば、あとは`loop()`内などお好きなところでいつものように`analogWrite()`してください。
 
 #### 注意
 CVを5つ以上使う場合は、`delay()`や`mills()`, `Metro`などの挙動が変化します。
 なお、その場合にも使えるオリジナルの代替関数として、以下の関数を用意しました。
 - `QuxCV::wait(unsigned long msec)` -> `delay()`の代替。
 - `QuxCV::msec()` -> `millis()`の代替
-- `QuxCV::Metro()``Metro()`の代替
+- `QuxCV::Metro()` -> `Metro()`の代替
 
 ### 音声入力
 Arduino Unoで音声入力をしても何がしきれるかは我々にとっても未知数なのですが、`setupAnalogRead()`関数を呼ぶことでanalogReadが高速化し、最大40kHz程度でサンプリングが可能になります。また、引数に`true`を与えるとサンプリングレートが最大80kHzにまで拡張できますが、精度が落ちる可能性もあります。
 
 ## Examples
-ライブラリをインストール後、Arduino IDE内の`Files/Eaxmples/Qux CV Shield Library`から参照可能です。
-
+- ライブラリをインストール後、Arduino IDE内の`Files/Eaxmples/Qux CV Shield Library`から参照可能です。
+- Ableton LiveのInstrumentとしてCV-Shieldを使うexampleも含まれています。
 
 ## Licence
 [MIT](https://github.com/Qux/CV-Shield/blob/master/LICENSE)
