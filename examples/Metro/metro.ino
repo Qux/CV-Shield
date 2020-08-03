@@ -5,13 +5,13 @@
 If you want to use Metro with more than 4 CVs, use Qux::Metro instead of
 normal Metro.
 */
-QuxCV::Metro metro = QuxCV::Metro();
+Qux::Metro metro = Qux::Metro();
 
 int counter;
 bool LED;
 
 void setup() {
-    QuxCV::setup6CVs();
+    Qux::CV::setup6CVs();
 
     counter = 0;
     LED = false;

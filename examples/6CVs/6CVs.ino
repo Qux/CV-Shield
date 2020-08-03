@@ -8,7 +8,7 @@ void setup() {
      If you use more than 4 pins, however, timer0 based functions,
      such as delay() and mills(), will won't work as usual.
   */
-  QuxCV::setup6CVs();
+  Qux::CV::setup6CVs();
 }
 
 

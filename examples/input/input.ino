@@ -9,7 +9,7 @@ void setup() {
     /*
     QuxCV::setupAnalogRead() sets the fast ADC.
     */
-    QuxCV::setupAnalogRead();
+    Qux::CV::setupAnalogRead();
     
     pinMode(13, OUTPUT);
 }

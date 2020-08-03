@@ -7,7 +7,7 @@ void setup() {
     By using QuxCV::setup2CVs(), you can use digital 3 and 11 pins
     as CV signal (fast PWM).
     */
-    QuxCV::setup2CVs();
+    Qux::CV::setup2CVs();
 }
 
 
