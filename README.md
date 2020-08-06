@@ -8,7 +8,7 @@ QuxのシンセサイザーのためのCV信号を、Arduinoの `analogWrite` �
 ### CV出力
 CV出力をするためには、少しのセットアップが必要です。セットアップ自体は`setup()`関数内で一つ関数を呼ぶだけのシンプルな設定なのですが、CV信号をいくつ出力したいかによって、`setup()`内で呼ぶ関数が変わります。出力数は2,4,6つのいづれかから選ぶことが可能です。
 
-- 2つ使う場合 : `setup2CVs()` -> D3,D13ピンがCV対応になります。
+- 2つ使う場合 : `setup2CVs()` -> D3,D11ピンがCV対応になります。
 - 4つ使う場合 : `setup4CVs()` -> D9,D10ピンがCV対応になります。
 - 6つ使う場合 : `setup6CVs()` -> D5,D6ピンがCV対応になります。（注意あり）
 
@@ -26,7 +26,7 @@ Arduino Unoで音声入力をしても何がしきれるかは我々にとって
 
 ## Examples
 - ライブラリをインストール後、Arduino IDE内の`Files/Eaxmples/Qux CV Shield Library`から参照可能です。
-- Ableton LiveのInstrumentとしてCV-Shieldを使うexampleも含まれています。
+- [Ableton LiveのInstrumentとしてCV-Shieldを使うexample](./examples/Ableton)も含まれています。
 
 ## Licence
 [MIT](https://github.com/Qux/CV-Shield/blob/master/LICENSE)
