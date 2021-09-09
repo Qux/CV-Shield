@@ -1,4 +1,4 @@
-#include <Qux_CV.h>
+#include <QuxCV.h>
 int counter;
 
 constexpr char INPUT_PIN = 0;

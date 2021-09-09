@@ -1,7 +1,7 @@
 # CV-Shield
 QuxのシンセサイザーのためのCV信号を、Arduinoの `analogWrite` 関数で生成できるようにした上で、オーディオジャックから出力できるようにするためのシールド用のライブラリです。
 
-## Installing
+## Install
 ダウンロードもしくは`clone`した後、Arduinoの`myApps/libraries`フォルダに入れてください。
 
 ## Usage
